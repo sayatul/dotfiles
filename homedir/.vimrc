@@ -26,6 +26,10 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'majutsushi/tagbar'
+Plugin 'marcopaganini/termschool-vim-theme'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'fatih/vim-go'
+Plugin 'rizzatti/dash.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -50,15 +54,10 @@ set shiftwidth=2
 set conceallevel=0
 
 "Automatically_removing_all_trailing_whitespace
-autocmd BufWritePre *.py :%s/\s\+$//e
-autocmd BufWritePre *.xml :%s/\s\+$//e
-autocmd BufWritePre *.js :%s/\s\+$//e
-
-"Exit insert mode
-inoremap jj <ESC>
+autocmd BufWritePre * %s/\s\+$//e
 
 "Move b/w panes Cmd Opt Arrow
-nnoremap <D-A-Right> <C-W><C-L> 
+nnoremap <D-A-Right> <C-W><C-L>
 nnoremap <D-A-Left> <C-W><C-H>
 nnoremap <D-A-Down> <C-W><C-J>
 nnoremap <D-A-Up> <C-W><C-K>
@@ -83,7 +82,9 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 " Color Scheme
 let g:enable_bold_font = 1
 set background=dark
-colorscheme hybrid_material 
+colorscheme hybrid_material
+" colorscheme termschool
+" colorscheme solarized8
 let g:material_terminal_italics = 1
 
 "airlline
@@ -115,13 +116,6 @@ let g:indentLine_faster = 1
 "needtree show hidden files
 let NERDTreeShowHidden=1
 
-
-" if has('mac')
-  " if system("osascript -e 'tell application \"Finder\" to get bounds of window of desktop' | cut -d ' ' -f 4") > 900
-    " set guifont=Monaco:h12
-  " else
-    " set guifont=Monaco:h12
-  " endif
-" endif
-
-
+"go
+" disable fmt on save
+let g:go_fmt_autosave = 0

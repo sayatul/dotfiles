@@ -53,7 +53,7 @@
 [alias]
   # most commonly used
   co = checkout
-  d = diff --color-words
+  d = diff
   cam = commit -a -m
   upm = !git fetch upstream && git merge upstream/master
 

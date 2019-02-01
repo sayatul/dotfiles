@@ -39,8 +39,6 @@ brew tap caskroom/versions > /dev/null 2>&1
 # install brew packages
 sh brew.sh
 
-# install pip packages
-sh pip-packages.sh
 
 # install vim vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -50,7 +48,7 @@ mkdir ~/WorkSpace
 mkdir ~/Envs
 
 ln -sf ~/dotfiles/homedir/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/homedir/.alias ~/.alias
+ln -sf ~/dotfiles/homedir/.aliases ~/.oh-my-zsh/custom/.aliases
 ln -sf ~/dotfiles/homedir/.vim ~/.vim
 ln -sf ~/dotfiles/homedir/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/homedir/.gitconfig ~/.gitconfig

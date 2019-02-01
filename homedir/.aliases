@@ -6,11 +6,9 @@ alias git=hub
 alias ..="cd .."
 alias ~="cd ~"
 alias desktop="cd ~/Desktop"
-alias reshell="source ~/.zshrc"
 
 # python
 alias ipy="ipython"
-alias ipy2="ipython2"
 alias jn="jupyter notebook"
 alias pipdeps="pip install -U --force --no-deps ."
 alias f8="flake8"
@@ -25,11 +23,7 @@ alias mdiff="mvim -d"
 
 alias history="mvim ~/.zsh_history"
 
-# Lock the screen (when going AFK)
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
 # Flush the DNS on Mac
-alias dnsflush='dscacheutil -flushcache'
 
 # Empty the Trash on all mounted volumes and the main HDD.
 # Also, clear Apple’s System Logs to improve shell startup speed.
@@ -39,9 +33,7 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 # Git Tools
 # assumes git-up is installed (gem install git-up)
 # switches to 'develop' branch, updates all local branches (nicely using git-up), removes all local branches already merged into 'develop'
-alias gitdev='git checkout develop; git-up; git branch --merged develop | grep -v "\* develop" | xargs -n 1 git branch -d; git branch;'
 alias gfu="git fetch upstream"
-alias gd="git icdiff"
 # Directory listings
 # LS_COLORS='no=01;37:fi=01;37:di=07;96:ln=01;36:pi=01;32:so=01;35:do=01;35:bd=01;33:cd=01;33:ex=01;31:mi=00;05;37:or=00;05;37:'
 # -G Add colors to ls
@@ -56,22 +48,3 @@ alias path='echo -e ${PATH//:/\\n}'
 
 # Copy and paste and prune the usless newline
 alias pbcopynn='tr -d "\n" | pbcopy'
-
-# Reload the shell (i.e. invoke as a login shell)
-alias reload="exec $SHELL -l"
-
-# Disable Spotlight
-alias spotoff="sudo mdutil -a -i off"
-# Enable Spotlight
-alias spoton="sudo mdutil -a -i on"
-
-# Get macOS Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
-alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; mas upgrade; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup'
-
-alias vtop="vtop --theme wizard"
-
-
-# If local aliases
-for file in ~/.aliases_local; do
-    source "$file"
-done

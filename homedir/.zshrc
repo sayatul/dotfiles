@@ -96,42 +96,21 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export WORKON_HOME=$HOME/envs
 export PROJECT_HOME=$HOME/Workspace
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 source /usr/local/bin/virtualenvwrapper.sh
+
+#go
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
 
 # psql
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-
-for file in ~/.shellaliases; do
-  source "$file"
-done
 
 function setenv() {
   env=$(echo `basename $VIRTUAL_ENV`)
   export $(cat ~/.env/common.env | xargs)
   export $(cat ~/.env/$env.env | xargs)
-}
-
-function oapps() {
-  ## declare an array of apps
-  declare -a apps=("Spectacle" "CatchMouse" "Postgres" "Slack" "Google Chrome" "SensibleSideButtons")
-  for i in "${apps[@]}"
-  do
-    open -a "$i"
-  done
-}
-
-function pr() {
-  git_message=$(git log -1 --pretty=%B)
-  if [ -z "$1" ]
-  then
-    msg="$git_message"
-  else
-    msg="$git_message 
-    
-    [$1]"
-  fi  
-    git pull-request -m $msg
 }
 
 # The next line updates PATH for the Google Cloud SDK.
