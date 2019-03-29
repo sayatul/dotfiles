@@ -430,12 +430,38 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSTouchBarConfig: regular</key>
+	<dict>
+		<key>CurrentItems</key>
+		<array>
+			<string>iTermTouchBarIdentifierAutocomplete</string>
+			<string>iTermTouchBarIdentifierStatus</string>
+			<string>NSTouchBarItemIdentifierFlexibleSpace</string>
+			<string>NSTouchBarItemIdentifierOtherItemsProxy</string>
+			<string>iTermTouchBarIdentifierAddMark</string>
+			<string>iTermTouchBarIdentifierPreviousMark</string>
+			<string>iTermTouchBarIdentifierNextMark</string>
+		</array>
+		<key>DefaultItems</key>
+		<array>
+			<string>iTermTouchBarIdentifierManPage</string>
+			<string>iTermTouchBarIdentifierColorPreset</string>
+			<string>iTermTouchBarIdentifierFunctionKeys</string>
+			<string>NSTouchBarItemIdentifierFlexibleSpace</string>
+			<string>NSTouchBarItemIdentifierOtherItemsProxy</string>
+			<string>iTermTouchBarIdentifierAddMark</string>
+			<string>iTermTouchBarIdentifierPreviousMark</string>
+			<string>iTermTouchBarIdentifierNextMark</string>
+		</array>
+	</dict>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>370 147 700 622 0 0 1440 877 </string>
+	<string>370 201 700 622 0 0 1440 877 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>268 126 606 469 0 0 1440 877 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>377 344 937 514 0 0 1440 877 </string>
+	<string>-1262 499 796 486 -1920 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 39 1440 838 0 0 1440 877 </string>
+	<string>0 41 1440 836 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>186 110 570 402 0 0 1440 877 </string>
 	<key>New Bookmarks</key>
@@ -1145,7 +1171,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-01-27T15:52:29Z</date>
+	<date>2019-03-24T17:06:46Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -1163,6 +1189,6 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.2.7</string>
+	<string>3.2.8</string>
 </dict>
 </plist>

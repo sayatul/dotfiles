@@ -62,8 +62,9 @@ plugins=(
   git
   gitignore
   dotenv
+  zsh-completions
+  zsh-apple-touchbar
 )
-
 source $ZSH/oh-my-zsh.sh
 
 # User configuration

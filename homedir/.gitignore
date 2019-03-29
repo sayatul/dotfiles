@@ -106,7 +106,7 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
+# dist/
 downloads/
 eggs/
 .eggs/
@@ -274,6 +274,5 @@ xcuserdata/
 localserver.py
 local.py
 dev.db
-migrations/*
 
 stellar.yaml

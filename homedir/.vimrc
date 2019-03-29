@@ -29,7 +29,8 @@ Plugin 'majutsushi/tagbar'
 Plugin 'marcopaganini/termschool-vim-theme'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'fatih/vim-go'
-Plugin 'rizzatti/dash.vim'
+Plugin 'JuliaEditorSupport/julia-vim'
+Plugin 'godlygeek/csapprox'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -52,9 +53,13 @@ syntax enable
 set tabstop=2
 set shiftwidth=2
 set conceallevel=0
+set visualbell                  "No sounds
+set autoread                    "Reload files changed outside vim
 
 "Automatically_removing_all_trailing_whitespace
-autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritePre *.py %s/\s\+$//e
+" autocmd BufWritePre *.jsx %s/\s\+$//e
+autocmd BufWritePre *.xml %s/\s\+$//e
 
 "Move b/w panes Cmd Opt Arrow
 nnoremap <D-A-Right> <C-W><C-L>
