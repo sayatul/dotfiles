@@ -1,8 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/say/.oh-my-zsh"
 export LESS=-R
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -36,10 +34,10 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -62,9 +60,17 @@ plugins=(
   git
   gitignore
   dotenv
-  zsh-completions
-  zsh-apple-touchbar
+  jira
+  postgres
+  brew
+  heroku
+  iterm2
+  npm
+  pip
+  python
 )
+# Path to your oh-my-zsh installation.
+export ZSH="/Users/say/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -95,18 +101,15 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export WORKON_HOME=$HOME/envs
+export WORKON_HOME=$HOME/Envs
 export PROJECT_HOME=$HOME/Workspace
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-source /usr/local/bin/virtualenvwrapper.sh
+export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+source /usr/local/bin/virtualenvwrapper_lazy.sh
 
 #go
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
-
-# psql
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 
 function setenv() {
   env=$(echo `basename $VIRTUAL_ENV`)
@@ -114,5 +117,8 @@ function setenv() {
   export $(cat ~/.env/$env.env | xargs)
 }
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/say/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/say/google-cloud-sdk/path.zsh.inc'; fi
+export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
+export PATH="/usr/local/opt/node@8/bin:$PATH"
+
+autoload -U compinit && compinit
+zmodload -i zsh/complist

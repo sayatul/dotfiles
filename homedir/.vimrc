@@ -56,6 +56,8 @@ set conceallevel=0
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 
+set guifont=Monaco:h14
+
 "Automatically_removing_all_trailing_whitespace
 autocmd BufWritePre *.py %s/\s\+$//e
 " autocmd BufWritePre *.jsx %s/\s\+$//e

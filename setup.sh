@@ -48,7 +48,7 @@ mkdir ~/WorkSpace
 mkdir ~/Envs
 
 ln -sf ~/dotfiles/homedir/.zshrc ~/.zshrc
-ln -sf ~/dotfiles/homedir/.aliases ~/.oh-my-zsh/custom/.aliases
+ln -sf ~/dotfiles/homedir/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
 ln -sf ~/dotfiles/homedir/.vim ~/.vim
 ln -sf ~/dotfiles/homedir/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/homedir/.gitconfig ~/.gitconfig
