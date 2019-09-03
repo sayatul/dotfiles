@@ -114,15 +114,21 @@ let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
 nnoremap ,c :call NERDComment(0,"toggle")<CR>
 vnoremap ,c :call NERDComment(0,"toggle")<CR>
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$', '\.DS_Store$']
+"needtree show hidden files
+let NERDTreeShowHidden=1
 
 "https://github.com/Yggdroot/indentLine
 let g:indentLine_char = '|'
 let g:indentLine_faster = 1
 
-"needtree show hidden files
-let NERDTreeShowHidden=1
-
 "go
 " disable fmt on save
 let g:go_fmt_autosave = 0
+
+map <Leader>p :call InsertLine()<CR>
+
+function! InsertLine()
+  let trace = expand("import pdb; pdb.set_trace()")
+  execute "normal o".trace
+endfunction

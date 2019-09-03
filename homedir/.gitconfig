@@ -48,7 +48,6 @@
   # prevent crlf (then you will have to deal with the problem -- dos2unix, etc)
   #safecrlf = true
   editor = vim
-  fileMode = false
   #editor = subl -w
 
 [alias]
@@ -149,6 +148,7 @@
   cob = checkout -b
   sno = show --name-only
   logsimple = log --graph --abbrev-commit --pretty=oneline --all --decorate
+  permission-reset = !git diff -p -R --no-color | grep -E \"^(diff|(old|new) mode)\" --color=never | git apply
 [apply]
   whitespace = nowarn
 
