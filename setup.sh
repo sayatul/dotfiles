@@ -5,10 +5,7 @@
 # @author Atul Yadav
 ###########################
 
-#####
 # install homebrew (CLI Packages)
-#####
-
 brew_bin=$(which brew) 2>&1 > /dev/null
 if [[ $? != 0 ]]; then
   action "installing homebrew"
@@ -39,7 +36,6 @@ brew tap caskroom/versions > /dev/null 2>&1
 # install brew packages
 sh brew.sh
 
-
 # install vim vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
@@ -49,15 +45,11 @@ mkdir ~/Envs
 
 ln -sf ~/dotfiles/homedir/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/homedir/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh
+ln -sf ~/dotfiles/homedir/commands.zsh ~/.oh-my-zsh/custom/commands.zsh
 ln -sf ~/dotfiles/homedir/.vim ~/.vim
 ln -sf ~/dotfiles/homedir/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/homedir/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/homedir/.gitignore ~/.gitignore
-
-#####
-# set defaults for macos
-#####
-
 
 # iTerm2
 # Specify the preferences directory

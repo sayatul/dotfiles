@@ -109,12 +109,6 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
-function setenv() {
-  env=$(echo `basename $VIRTUAL_ENV`)
-  export $(cat ~/.env/common.env | xargs)
-  export $(cat ~/.env/$env.env | xargs)
-}
-
 export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
 export PATH="/usr/local/opt/node@8/bin:$PATH"
 
@@ -122,3 +116,5 @@ autoload -U compinit && compinit
 zmodload -i zsh/complist
 
 source ~/.secure_env
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -29,13 +29,14 @@ Plugin 'majutsushi/tagbar'
 Plugin 'marcopaganini/termschool-vim-theme'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'fatih/vim-go'
-Plugin 'JuliaEditorSupport/julia-vim'
 Plugin 'godlygeek/csapprox'
+Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+set rtp+=/usr/local/opt/fzf
 " -----------------------------------------------------------------------------
 " configure editor basic stuff
 " -----------------------------------------------------------------------------
@@ -55,6 +56,7 @@ set shiftwidth=2
 set conceallevel=0
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
+set wildmode=longest,list       "full optional
 
 set guifont=Monaco:h14
 
