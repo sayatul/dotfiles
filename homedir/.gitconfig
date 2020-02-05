@@ -53,8 +53,8 @@
 [alias]
   # most commonly used
   co = checkout
+  cp = cherry-pick
   d = diff
-  cam = commit -a -m
   upm = !git fetch upstream && git merge upstream/master
 
   # least used
@@ -69,9 +69,6 @@
   dm = !git diff | subl
   dv = !git diff | vim
   who = shortlog -s --
-  ph = push
-  pl = pull
-  lp = log -p
   lod = log --oneline --decorate
   lg = log --graph
   lpo = log --pretty=oneline --abbrev-commit --graph --decorate --all
@@ -94,8 +91,6 @@
   logit = log --stat -M
   scrub = !git reset --hard && git clean -fd
   pub = !git pub checkout master && git pull && git checkout dev && git rebase master && git checkout master && git merge dev && git wtf
-  cs = status
-  rv = remote -v
   lwr = log --stat -C
   pur = pull --rebase
   whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short

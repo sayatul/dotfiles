@@ -62,7 +62,7 @@ set guifont=Monaco:h14
 
 "Automatically_removing_all_trailing_whitespace
 autocmd BufWritePre *.py %s/\s\+$//e
-" autocmd BufWritePre *.jsx %s/\s\+$//e
+autocmd BufWritePre *.js %s/\s\+$//e
 autocmd BufWritePre *.xml %s/\s\+$//e
 
 "Move b/w panes Cmd Opt Arrow
@@ -71,11 +71,10 @@ nnoremap <D-A-Left> <C-W><C-H>
 nnoremap <D-A-Down> <C-W><C-J>
 nnoremap <D-A-Up> <C-W><C-K>
 
+"Get class and method name above cursor
 nnoremap <C-s> :echo getline(search('^class', 'bn')) . ">" . getline(search('^\s*def', 'bn'))<CR>
 
-" -----------------------------------------------------------------------------
-" configure ALE
-" -----------------------------------------------------------------------------
+"configure ALE
 let b:ale_linters = ['xmllintr']
 let b:ale_linters = ['flake8', 'pylint']
 let g:airline#extensions#ale#enabled = 1
@@ -117,20 +116,36 @@ let g:NERDTrimTrailingWhitespace = 1
 nnoremap ,c :call NERDComment(0,"toggle")<CR>
 vnoremap ,c :call NERDComment(0,"toggle")<CR>
 let NERDTreeIgnore = ['\.pyc$', '\.DS_Store$']
-"needtree show hidden files
+
+"needtree config
 let NERDTreeShowHidden=1
+map <C-n> :NERDTreeToggle<CR>
 
 "https://github.com/Yggdroot/indentLine
 let g:indentLine_char = '|'
 let g:indentLine_faster = 1
 
-"go
-" disable fmt on save
+"go 
 let g:go_fmt_autosave = 0
 
-map <Leader>p :call InsertLine()<CR>
+" Disable quote concealing in JSON files
+let g:vim_json_conceal=0
 
-function! InsertLine()
+"insert pdb on cursor line
+map <Leader>p :call InsertPdb()<CR>
+function! InsertPdb()
   let trace = expand("import pdb; pdb.set_trace()")
   execute "normal o".trace
 endfunction
+
+"insert js debugger on cursor line
+map <Leader>d :call InsertDebugger()<CR>
+function! InsertDebugger()
+  let trace = expand("debugger;")
+  execute "normal o".trace
+endfunction
+
+command! Q :q
+command! E :e
+command! W :w
+command! Wq :wq

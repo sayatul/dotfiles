@@ -66,6 +66,7 @@ plugins=(
   iterm2
   pip
   python
+  gcloud
 )
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/say/.oh-my-zsh"
@@ -110,7 +111,10 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
 export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
-export PATH="/usr/local/opt/node@8/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completio
 
 autoload -U compinit && compinit
 zmodload -i zsh/complist
