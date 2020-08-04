@@ -1,7 +1,6 @@
 #!/bin/sh
 
 alias git=hub
-alias wk=workon
 
 # Easier navigation: .., ~ and -
 alias ..="cd .."
@@ -13,7 +12,6 @@ alias ipy="ipython"
 alias jn="jupyter notebook"
 alias pipdeps="pip install -U --force --no-deps ."
 alias f8="flake8"
-alias mkp="mkproject"
 alias wk="workon"
 
 # similar to workon for non-python
@@ -23,8 +21,6 @@ alias ws="cd ~/WorkSpace && cd"
 alias mdiff="mvim -d"
 
 alias history="mvim ~/.zsh_history"
-
-alias gcp_set="gcloud config configurations activate"
 
 # Empty the Trash on all mounted volumes and the main HDD.
 # Also, clear Apple’s System Logs to improve shell startup speed.
@@ -46,4 +42,8 @@ alias path='echo -e ${PATH//:/\\n}'
 # Copy and paste and prune the usless newline
 alias pbcopynn='tr -d "\n" | pbcopy'
 
+alias gcp="gcloud config configurations activate"
 alias gcprun='gcloud beta run deploy'
+alias vpn="tunnelblickctl"
+
+alias fs="fulfil-server --reload"

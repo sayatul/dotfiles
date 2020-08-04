@@ -19,17 +19,10 @@ Plugin 'w0rp/ale'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'kristijanhusak/vim-hybrid-material'
 Plugin 'itchyny/lightline.vim'
 Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'majutsushi/tagbar'
-Plugin 'marcopaganini/termschool-vim-theme'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'fatih/vim-go'
-Plugin 'godlygeek/csapprox'
 Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
@@ -64,6 +57,7 @@ set guifont=Monaco:h14
 autocmd BufWritePre *.py %s/\s\+$//e
 autocmd BufWritePre *.js %s/\s\+$//e
 autocmd BufWritePre *.xml %s/\s\+$//e
+autocmd BufWritePre *.yml %s/\s\+$//e
 
 "Move b/w panes Cmd Opt Arrow
 nnoremap <D-A-Right> <C-W><C-L>
@@ -103,19 +97,12 @@ let g:airline_theme = "hybrid"
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
 
-"https://github.com/davidhalter/jedi-vim
-let g:jedi#auto_initialization = 0
-let g:jedi#auto_initialization = 0
-let g:jedi#use_tabs_not_buffers = 1
-let g:jedi#popup_select_first = 0
-let g:jedi#show_call_signatures = "1"
-
 "https://github.com/scrooloose/nerdcommenter
 let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
 nnoremap ,c :call NERDComment(0,"toggle")<CR>
 vnoremap ,c :call NERDComment(0,"toggle")<CR>
-let NERDTreeIgnore = ['\.pyc$', '\.DS_Store$']
+let NERDTreeIgnore = ['\.pyc$', '\.DS_Store$', '\.pytest_cache$', '\.git$']
 
 "needtree config
 let NERDTreeShowHidden=1

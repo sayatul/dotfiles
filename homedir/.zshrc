@@ -1,3 +1,5 @@
+# zmodload -i zsh/complist
+#
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -59,14 +61,13 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
   gitignore
-  dotenv
-  jira
   brew
   heroku
   iterm2
   pip
   python
   gcloud
+  docker
 )
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/say/.oh-my-zsh"
@@ -81,10 +82,11 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+#  export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
-# fi
+#  export EDITOR='mvim'
+#fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -112,9 +114,18 @@ export PATH=$PATH:$GOBIN
 
 export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
 
+# export LANG=en_US.UTF-8
+# export LC_ALL=en_US.UTF-8
+
+# nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completio
+export PATH=$NVM_DIR/versions/node/global/bin:$PATH
+export MANPATH=$NVM_DIR/versions/node/global/share/man:$MANPATH
+nvm() {
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  nvm "${@}"
+}
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 autoload -U compinit && compinit
 zmodload -i zsh/complist
@@ -122,3 +133,9 @@ zmodload -i zsh/complist
 source ~/.secure_env
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source <(kubectl completion zsh)
+# zprof
+
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/say/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;

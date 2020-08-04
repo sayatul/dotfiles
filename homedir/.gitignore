@@ -276,5 +276,9 @@ local.py
 dev.db
 
 .env
+.nvmrc
 
 stellar.yaml
+
+minikube.yaml
+minikube.yml

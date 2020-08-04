@@ -3,9 +3,15 @@ function reshell() {
 }
 
 function setenv() {
-  env=$(echo `basename $VIRTUAL_ENV`)
-  export $(cat ~/.env/common.sh | xargs)
-  export $(cat ~/.env/$env.sh | xargs)
+  if [ "$1" ]
+    then
+      env=$1
+  else
+    env=$(echo `basename $VIRTUAL_ENV`)
+  fi
+
+  export $(cat ~/Workspace/.env/common.sh | xargs)
+  export $(cat ~/Workspace/.env/$env.sh | xargs)
 }
 
 function pg-restore () {
@@ -18,17 +24,18 @@ function pg-restore () {
     pg_restore --no-owner -v -U tryton -d $db $filename
 }
 
-function pullpr() {
-  echo "Pulling ${2:-upstream} pr $1"
-  git fetch ${2:-upstream} pull/$1/head:"GH-$1"
-  git checkout "GH-$1"
-}
-
-function gpo() {
-  git push origin $1 -f
-}
-
 function clearpyc() {
   find . -type f -name '*.pyc'
   find . -type f -name '*.pyc' -delete
+}
+
+function kubeapply () {
+  if [ -z "$2" ]
+  then
+          context=$(kubectl config current-context)
+  else
+          context=$2
+  fi
+  echo "Deploying in context $context"
+  cat $1 | sed s/\<RANDOM_ID\>/$(cat /dev/urandom  | LC_ALL=C tr -dc 'a-zA-Z0-9'| head -c 32)/ | kubectl apply --context="$context" -f -
 }

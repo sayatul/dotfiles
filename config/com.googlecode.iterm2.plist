@@ -23,9 +23,13 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>/Applications</string>
+	<string>~/Documents</string>
+	<key>NSNavLastUserSetHideExtensionButtonState</key>
+	<true/>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{799, 448}</string>
+	<key>NSNavPanelExpandedSizeForSaveMode</key>
+	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -68,13 +72,13 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
-	<string>2480 456 799 448 0 0 1920 1057 </string>
+	<string>2286 577 347 181 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>333 62 700 622 0 0 1366 745 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1366 745 0 0 1366 745 </string>
+	<string>1920 -710 1080 1897 1920 -710 1080 1897 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>388 169 650 538 0 0 1440 877 </string>
+	<string>1920 -710 1080 1897 1920 -710 1080 1897 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -669,7 +673,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -902,7 +906,7 @@
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
@@ -927,10 +931,13 @@
 	<array>
 		<string>3.3.6</string>
 		<string>3.3.8</string>
+		<string>3.3.11</string>
+		<string>3.3.12</string>
 		<string>3.3.1</string>
 		<string>3.3.3</string>
 		<string>3.3.5</string>
 		<string>3.3.7</string>
+		<string>3.3.9</string>
 		<string>3.3.2</string>
 		<string>3.3.4</string>
 	</array>
@@ -944,14 +951,14 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1920, 1080}}</string>
+		<string>{{1920, -710}, {1080, 1920}}</string>
 		<key>topLeft</key>
-		<string>{403, 751}</string>
+		<string>{1920, -115}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>6E9F2AFC-9E3E-4F91-8051-D41CA957C491</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>213</integer>
+	<integer>365</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1692,6 +1699,12 @@
 			</dict>
 		</array>
 	</dict>
+	<key>NoSyncSaveDocumentAsPathSet_saveDocumentAs:</key>
+	<true/>
+	<key>NoSyncSuppressDownloadConfirmation</key>
+	<true/>
+	<key>NoSyncSuppressDownloadConfirmation_selection</key>
+	<integer>1</integer>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>587353612.43901396</real>
 	<key>PMPrintingExpandedStateForPrint2</key>
@@ -1746,13 +1759,13 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-02-03T05:50:06Z</date>
+	<date>2020-07-14T16:31:30Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>StatusBarPosition</key>
@@ -1783,6 +1796,6 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.8</string>
+	<string>3.3.12</string>
 </dict>
 </plist>
