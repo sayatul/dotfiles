@@ -33,6 +33,7 @@ Temporary Items
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff:
+.idea
 .idea/**/workspace.xml
 .idea/**/tasks.xml
 .idea/dictionaries
@@ -273,6 +274,7 @@ xcuserdata/
 
 localserver.py
 local.py
+local_config.py
 dev.db
 
 .env
@@ -282,3 +284,5 @@ stellar.yaml
 
 minikube.yaml
 minikube.yml
+
+pip-wheel-metadata/*

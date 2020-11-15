@@ -13,17 +13,19 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'Yggdroot/indentLine'
 Plugin 'w0rp/ale'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/nerdtree'
 Plugin 'kristijanhusak/vim-hybrid-material'
 Plugin 'itchyny/lightline.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'tpope/vim-fugitive'
+Plugin 'rizzatti/dash.vim'
+Plugin 'preservim/tagbar'
+" Plugin 'pangloss/vim-javascript'
+" Plugin 'flazz/vim-colorschemes'
+" Plugin 'b4b4r07/vim-sqlfmt'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -108,6 +110,9 @@ let NERDTreeIgnore = ['\.pyc$', '\.DS_Store$', '\.pytest_cache$', '\.git$']
 let NERDTreeShowHidden=1
 map <C-n> :NERDTreeToggle<CR>
 
+"tagbar
+nmap <C-t> :TagbarToggle<CR>
+
 "https://github.com/Yggdroot/indentLine
 let g:indentLine_char = '|'
 let g:indentLine_faster = 1
@@ -117,6 +122,9 @@ let g:go_fmt_autosave = 0
 
 " Disable quote concealing in JSON files
 let g:vim_json_conceal=0
+
+let g:sqlfmt_command = "sqlformat"
+let g:sqlfmt_options = "-r -k upper"
 
 "insert pdb on cursor line
 map <Leader>p :call InsertPdb()<CR>

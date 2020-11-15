@@ -47,3 +47,5 @@ alias gcprun='gcloud beta run deploy'
 alias vpn="tunnelblickctl"
 
 alias fs="fulfil-server --reload"
+alias pm="python-modernize --future-unicode --nobackups -w"
+alias ch="git co -b ch$1"

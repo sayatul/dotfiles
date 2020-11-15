@@ -39,3 +39,36 @@ function kubeapply () {
   echo "Deploying in context $context"
   cat $1 | sed s/\<RANDOM_ID\>/$(cat /dev/urandom  | LC_ALL=C tr -dc 'a-zA-Z0-9'| head -c 32)/ | kubectl apply --context="$context" -f -
 }
+
+function cl() {
+  if [[ $1 = ch* ]];
+  then
+    ticket=$1
+  else
+    ticket="$(git branch --show-current).$1"
+  fi
+  
+  echo "Creating changelog entry for $ticket"
+  towncrier create $ticket
+  
+  echo $2 > changelog/$ticket
+  cat changelog/$ticket
+  
+  echo "Adding to git 'changelog/$ticket'"
+  git add changelog/$ticket
+}
+
+function gpo() {
+  branch="$(git branch --show-current)" 
+  git push origin $branch -f
+  echo "in gpo"
+}
+
+function rebase() {  
+  hub pull --rebase upstream $remote_branch
+  if [ "$1" ]
+    then
+      gpo
+  fi
+
+}

@@ -40,10 +40,10 @@
 	<false/>
 	<key>NSSplitView Subview Frames NSColorPanelSplitView</key>
 	<array>
-		<string>0.000000, 0.000000, 224.000000, 258.000000, NO, NO</string>
-		<string>0.000000, 259.000000, 224.000000, 48.000000, NO, NO</string>
+		<string>0.000000, 0.000000, 120.000000, 143.000000, NO, NO</string>
+		<string>0.000000, 144.000000, 120.000000, 43.000000, NO, NO</string>
 	</array>
-	<key>NSTableView Columns v2 KeyBingingTable</key>
+	<key>NSTableView Columns v3 KeyBingingTable</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
 	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVVBcnJheYABrgsMEx4fICEiIyQqNDU2VSRu
@@ -71,14 +71,16 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame NSColorPanel</key>
+	<string>0 76 120 163 0 0 1920 1055 </string>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>2286 577 347 181 0 0 1920 1057 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>333 62 700 622 0 0 1366 745 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1920 -710 1080 1897 1920 -710 1080 1897 </string>
+	<string>1920 -494 1080 1895 1920 -494 1080 1895 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1920 -710 1080 1897 1920 -710 1080 1897 </string>
+	<string>0 0 1920 1055 0 0 1920 1055 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -951,14 +953,14 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{1920, -710}, {1080, 1920}}</string>
+		<string>{{0, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{1920, -115}</string>
+		<string>{486, 736}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>6E9F2AFC-9E3E-4F91-8051-D41CA957C491</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>365</integer>
+	<integer>480</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1748,6 +1750,8 @@
 	<string>/Users/say/dotfiles/config</string>
 	<key>Print In Black And White</key>
 	<true/>
+	<key>QuitWhenAllWindowsClosed</key>
+	<true/>
 	<key>SUAutomaticallyUpdate</key>
 	<true/>
 	<key>SUEnableAutomaticChecks</key>
@@ -1759,7 +1763,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-07-14T16:31:30Z</date>
+	<date>2020-10-27T17:04:33Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
