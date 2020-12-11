@@ -91,7 +91,8 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
-export PATH="/usr/local/opt/postgresql@10/bin:$PATH"
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -117,5 +118,6 @@ source <(kubectl completion zsh)
 HEROKU_AC_ZSH_SETUP_PATH=/Users/say/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
+
 # zprof

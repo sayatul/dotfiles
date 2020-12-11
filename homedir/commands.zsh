@@ -70,5 +70,4 @@ function rebase() {
     then
       gpo
   fi
-
 }
