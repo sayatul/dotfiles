@@ -8,8 +8,7 @@
 # install homebrew (CLI Packages)
 brew_bin=$(which brew) 2>&1 > /dev/null
 if [[ $? != 0 ]]; then
-  action "installing homebrew"
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     if [[ $? != 0 ]]; then
       error "unable to install homebrew, script $0 abort!"
       exit 2
@@ -36,9 +35,6 @@ brew tap caskroom/versions > /dev/null 2>&1
 # install brew packages
 sh brew.sh
 
-# install vim vundle
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
 # create symlinks & directories
 mkdir ~/WorkSpace
 mkdir ~/Envs
@@ -51,6 +47,9 @@ ln -sf ~/dotfiles/homedir/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/homedir/.gitconfig ~/.gitconfig
 ln -sf ~/dotfiles/homedir/.gitignore ~/.gitignore
 
+# install vim vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 # iTerm2
 # Specify the preferences directory
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/config/"
@@ -58,5 +57,5 @@ defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
 # disable guest user
-defaults write /Library/Preferences/com.apple.AppleFileServer guestAccess -bool NO
-defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server AllowGuestAccess -bool NO
+# defaults write /Library/Preferences/com.apple.AppleFileServer guestAccess -bool NO
+# defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server AllowGuestAccess -bool NO

@@ -81,6 +81,8 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true" 
 export WORKON_HOME=$HOME/Envs
 export PROJECT_HOME=$HOME/Workspace
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
@@ -99,14 +101,8 @@ export LC_ALL=en_US.UTF-8
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
-export PATH=$NVM_DIR/versions/node/global/bin:$PATH
-export MANPATH=$NVM_DIR/versions/node/global/share/man:$MANPATH
-nvm() {
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  nvm "${@}"
-}
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 source ~/.secure_env
 
@@ -119,5 +115,9 @@ HEROKU_AC_ZSH_SETUP_PATH=/Users/say/Library/Caches/heroku/autocomplete/zsh_setup
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
-
 # zprof
+test -e /Users/say/.iterm2_shell_integration.zsh && source /Users/say/.iterm2_shell_integration.zsh || true
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenvwrapper -)"
+fi

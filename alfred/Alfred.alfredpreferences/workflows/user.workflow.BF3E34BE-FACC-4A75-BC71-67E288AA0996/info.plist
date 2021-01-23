@@ -57,7 +57,7 @@
 			<key>config</key>
 			<dict>
 				<key>browser</key>
-				<string>org.mozilla.firefox</string>
+				<string>com.google.Chrome</string>
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
