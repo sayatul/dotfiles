@@ -1,6 +1,7 @@
 [user]
   name = Atul Yadav
-  email = me@sayatul.com
+  email = hello@sayatul.com 
+  signingkey = abc 
 [github]
   # https://github.com/blog/180-local-github-config
   user = sayatul
@@ -199,3 +200,9 @@
 	protocol = ssh
 [icdiff]
 	options = --highlight --line-numbers
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
+[gpg]
+	program = gpg

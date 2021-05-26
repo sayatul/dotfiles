@@ -4,6 +4,8 @@
 <dict>
 	<key>AlternateMouseScroll</key>
 	<true/>
+	<key>CommandSelection</key>
+	<true/>
 	<key>Default Bookmark Guid</key>
 	<string>93D2E8AE-7193-421B-B69D-FB65E2489CC9</string>
 	<key>HapticFeedbackForEsc</key>
@@ -895,8 +897,6 @@
 			<string>kNextWindowPointerAction</string>
 		</dict>
 	</dict>
-	<key>PreventEscapeSequenceFromClearingHistory</key>
-	<false/>
 	<key>Print In Black And White</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>

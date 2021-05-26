@@ -1,14 +1,18 @@
 # zmodload zsh/zprof
-#
 
 autoload -Uz compinit
-typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
-if [ $(date +'%j') != $updated_at ]; then
-  compinit -i
-else
-  compinit -C -i
-fi
-zmodload -i zsh/complist
+# typeset -i updated_at=$(date +'%j' -r ~/.zcompdump 2>/dev/null || stat -f '%Sm' -t '%j' ~/.zcompdump 2>/dev/null)
+# if [ $(date +'%j') != $updated_at ]; then
+  # compinit -i
+# else
+  # compinit -C -i
+# fi
+# zmodload -i zsh/complist
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+compinit -C
+
 
 export LESS=-R
 # Set name of the theme to load. Optionally, if you set this to "random"
@@ -100,24 +104,33 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+nvm() {
+  echo "🚨 NVM not loaded! Loading now..."
+  unset -f nvm
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+  nvm "$@"
+}
 
 source ~/.secure_env
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source <(kubectl completion zsh)
+# source <(kubectl completion zsh)
 
 # heroku autocomplete setup
 HEROKU_AC_ZSH_SETUP_PATH=/Users/say/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
-# zprof
 test -e /Users/say/.iterm2_shell_integration.zsh && source /Users/say/.iterm2_shell_integration.zsh || true
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
   eval "$(pyenv virtualenvwrapper -)"
 fi
+
+# export GPG_TTY=$(tty)
+# zprof
+
+export PATH="$HOME/.poetry/bin:$PATH"

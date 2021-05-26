@@ -2,6 +2,7 @@ function reshell() {
   source ~/.zshrc
 }
 
+
 function setenv() {
   if [ "$1" ]
     then
@@ -14,6 +15,7 @@ function setenv() {
   export $(cat ~/Workspace/.env/$env.sh | xargs)
 }
 
+
 function pg-restore () {
     filename=$1
     db=${filename%.*}
@@ -24,10 +26,12 @@ function pg-restore () {
     pg_restore --no-owner -v -U tryton -d $db $filename
 }
 
+
 function clearpyc() {
   find . -type f -name '*.pyc'
   find . -type f -name '*.pyc' -delete
 }
+
 
 function kubeapply () {
   if [ -z "$2" ]
@@ -40,23 +44,7 @@ function kubeapply () {
   cat $1 | sed s/\<RANDOM_ID\>/$(cat /dev/urandom  | LC_ALL=C tr -dc 'a-zA-Z0-9'| head -c 32)/ | kubectl apply --context="$context" -f -
 }
 
-function cl() {
-  if [[ $1 = ch* ]];
-  then
-    ticket=$1
-  else
-    ticket="$(git branch --show-current).$1"
-  fi
-  
-  echo "Creating changelog entry for $ticket"
-  towncrier create $ticket
-  
-  echo $2 > changelog/$ticket
-  cat changelog/$ticket
-  
-  echo "Adding to git 'changelog/$ticket'"
-  git add changelog/$ticket
-}
+
 
 function gpo() {
   branch="$(git branch --show-current)" 
@@ -64,10 +52,44 @@ function gpo() {
   echo "in gpo"
 }
 
-function rebase() {  
-  hub pull --rebase upstream $remote_branch
+
+function task() {
+  branch="$(git branch --show-current)" 
+  club story -q $branch
+}
+
+
+function yubi() {
+  killall -9 ssh-agent gpg-agent
   if [ "$1" ]
     then
-      gpo
+      echo "Activating 5ci"
+      cp -r /Users/say/.gnupg/ci-keys.d/* /Users/say/.gnupg/private-keys-v1.d
+  else
+    echo "Activating 5nfc"
+    cp -r /Users/say/.gnupg/nfc-key.d/* /Users/say/.gnupg/private-keys-v1.d
   fi
+  /usr/local/MacGPG2/bin/gpg2 --card-status &> /dev/null
+  eval $(/usr/local/MacGPG2/bin/gpgconf --launch gpg-agent)  
+}
+
+
+function cl() {
+
+  story=$(git branch --show-current | rev | cut -d'-' -f 1 | rev)
+
+  echo "Creating changelog entry for $story.$1"
+  echo $2 > changelog/$story.$1
+  cat changelog/$story.$1
+
+  echo "Adding to git 'changelog/$story.$1'"
+  git add changelog/$story.$1
+
+  echo "Committing changes"
+git commit -am "
+$2
+
+
+[$story]
+"
 }

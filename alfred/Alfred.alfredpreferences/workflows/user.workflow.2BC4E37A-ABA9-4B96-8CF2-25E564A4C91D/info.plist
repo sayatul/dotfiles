@@ -8,6 +8,19 @@
 	<string>Tools</string>
 	<key>connections</key>
 	<dict>
+		<key>07B2C85D-DDBC-4FF9-9F8E-B2D31E6AA3D3</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2944FC39-952D-4017-945A-A2BFB16B702A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
 		<array>
 			<dict>
@@ -106,17 +119,98 @@ sys.stderr.write('post result : ' + r.text + '\n')</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>script</key>
+				<string>import sys
+import requests
+
+path_map = {
+    "on": "switch/turn_on",
+    "off": "switch/turn_off"
+}
+
+token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJiZTU3N2ZmMWM2NDM0NWRlODVhZjlkYzFlNDIxMTdlMiIsImlhdCI6MTYxMTQxNzA2NCwiZXhwIjoxOTI2Nzc3MDY0fQ.H1zVaLAIIrLtLZslv6MFEf6zqjNkIwbyQR1o1lMmBZk"
+
+headers = {
+  'Authorization': 'Bearer {}'.format(token),
+  'Content-Type': 'application/json'
+}
+
+r = requests.post(
+    'http://192.168.77.4:8123/api/services/{}'.format(path_map[sys.argv[1]]),
+    headers=headers,
+    data="{\n    \"entity_id\": \"switch.378615802cf432d6eab3\"\n}"
+)
+r.raise_for_status()
+
+result = r.json()
+sys.stderr.write('post result : ' + r.text + '\n')</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>3</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2944FC39-952D-4017-945A-A2BFB16B702A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>heater</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>Hassio Heater</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>07B2C85D-DDBC-4FF9-9F8E-B2D31E6AA3D3</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>07B2C85D-DDBC-4FF9-9F8E-B2D31E6AA3D3</key>
+		<dict>
+			<key>xpos</key>
+			<integer>50</integer>
+			<key>ypos</key>
+			<integer>255</integer>
+		</dict>
 		<key>16039760-F173-4AB8-9C73-DA7401D5DE23</key>
 		<dict>
 			<key>xpos</key>
 			<integer>270</integer>
 			<key>ypos</key>
 			<integer>45</integer>
+		</dict>
+		<key>2944FC39-952D-4017-945A-A2BFB16B702A</key>
+		<dict>
+			<key>xpos</key>
+			<integer>260</integer>
+			<key>ypos</key>
+			<integer>250</integer>
 		</dict>
 		<key>2C99F6F1-EF16-4CF1-9762-5D05A1FFAA4D</key>
 		<dict>

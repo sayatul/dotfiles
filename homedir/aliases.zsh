@@ -46,3 +46,6 @@ alias gcp="gcloud config configurations activate"
 alias gcprun='gcloud beta run deploy'
 
 alias fs="fulfil-server --reload"
+
+alias airscan="/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport"
+alias ack=ag

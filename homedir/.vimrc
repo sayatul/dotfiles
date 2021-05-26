@@ -23,6 +23,7 @@ Plugin 'kristijanhusak/vim-hybrid-material'
 Plugin 'itchyny/lightline.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'preservim/tagbar'
+Plugin 'junegunn/fzf.vim'
 " Plugin 'pangloss/vim-javascript'
 " Plugin 'flazz/vim-colorschemes'
 " Plugin 'b4b4r07/vim-sqlfmt'
@@ -104,11 +105,13 @@ let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
 nnoremap ,c :call NERDComment(0,"toggle")<CR>
 vnoremap ,c :call NERDComment(0,"toggle")<CR>
-let NERDTreeIgnore = ['\.pyc$', '\.DS_Store$', '\.pytest_cache$', '\.git$']
 
 "needtree config
 let NERDTreeShowHidden=1
 map <C-n> :NERDTreeToggle<CR>
+" enable line numbers
+let NERDTreeShowLineNumbers=1
+let NERDTreeIgnore = ['\.pyc$', '\.DS_Store$', '\.pytest_cache$', '\.git$']
 
 "tagbar
 nmap <C-t> :TagbarToggle<CR>
@@ -144,3 +147,6 @@ command! Q :q
 command! E :e
 command! W :w
 command! Wq :wq
+
+" FZF
+nnoremap <C-p> :GFiles<Cr>

@@ -48,6 +48,50 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Caffeinate Control</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>EB79D87F-5FEA-48CE-B581-B6FC3519D6BB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>bash action.sh {query}</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>14D96C8C-0773-4CF4-8722-080480A9F370</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -94,50 +138,6 @@
 			<key>version</key>
 			<integer>3</integer>
 		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Caffeinate Control</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>EB79D87F-5FEA-48CE-B581-B6FC3519D6BB</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>bash action.sh {query}</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>14D96C8C-0773-4CF4-8722-080480A9F370</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
 	</array>
 	<key>readme</key>
 	<string>Use 'caff help' to see more information or visit the website.</string>
@@ -146,23 +146,23 @@
 		<key>14D96C8C-0773-4CF4-8722-080480A9F370</key>
 		<dict>
 			<key>xpos</key>
-			<integer>500</integer>
+			<integer>325</integer>
 			<key>ypos</key>
-			<real>10</real>
+			<integer>40</integer>
 		</dict>
 		<key>21E6B823-C3EF-47C6-A40C-0C46F64332D2</key>
 		<dict>
 			<key>xpos</key>
-			<integer>300</integer>
+			<integer>105</integer>
 			<key>ypos</key>
-			<real>10</real>
+			<integer>55</integer>
 		</dict>
 		<key>EB79D87F-5FEA-48CE-B581-B6FC3519D6BB</key>
 		<dict>
 			<key>xpos</key>
-			<integer>700</integer>
+			<integer>560</integer>
 			<key>ypos</key>
-			<real>10</real>
+			<integer>35</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>
