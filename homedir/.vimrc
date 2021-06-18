@@ -21,16 +21,14 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'kristijanhusak/vim-hybrid-material'
 Plugin 'itchyny/lightline.vim'
-Plugin 'rizzatti/dash.vim'
 Plugin 'preservim/tagbar'
 Plugin 'junegunn/fzf.vim'
-" Plugin 'pangloss/vim-javascript'
-" Plugin 'flazz/vim-colorschemes'
-" Plugin 'b4b4r07/vim-sqlfmt'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+set omnifunc=syntaxcomplete#Complete
 
 set rtp+=/usr/local/opt/fzf
 " -----------------------------------------------------------------------------
@@ -39,7 +37,7 @@ set rtp+=/usr/local/opt/fzf
 set expandtab           " enter spaces when tab is pressed
 set background=dark
 set number
-set colorcolumn=80      " set line marker at 79 char
+set colorcolumn=79      " set line marker at 79 char
 set showcmd             " show (partial) command in status line
 set showmatch
 set splitright          "split to right
@@ -55,6 +53,8 @@ set autoread                    "Reload files changed outside vim
 set wildmode=longest,list       "full optional
 
 set guifont=Monaco:h14
+
+" let g:deoplete#enable_at_startup = 1
 
 "Automatically_removing_all_trailing_whitespace
 autocmd BufWritePre *.py %s/\s\+$//e

@@ -93,3 +93,46 @@ $2
 [$story]
 "
 }
+
+function gke_proxy() {
+	SOCKET="$HOME/.ssh/gke-maint-proxy"
+	function proxy_status() {
+		if [[ ! -S "$SOCKET" ]]; then
+			echo "not running"
+			return;
+		fi
+		ssh -S $SOCKET -O check maint
+		if [[ "$?" -ne 0 ]]; then
+			echo "not running"
+			return;
+		fi
+		echo "running";
+	}
+	case $1 in
+	  start)
+	    if [[ "$(proxy_status)" == "running" ]]; then
+	            echo "Already running"
+	            return;
+	    fi
+	    echo -ne "Starting portfwd...%\033[0K\r"
+	    # apps 34.74.170.140
+	    ssh -qfNTM \
+		    -L 9140:34.74.170.140:443 \
+		    -S $SOCKET maint
+	    echo -ne "\rPortfwd started"
+	    ;;
+	  stop)
+	    if [[ "$(proxy_status)" != "running" ]]; then
+	            echo "Not running"
+	            return;
+	    fi
+	    echo -ne "Stopping proxy...%\033[0K\r"
+	    ssh -S $SOCKET -O exit maint
+	    echo -ne "\rProxy stopped"
+	    ;;
+	  *)
+	    echo "Status: $(proxy_status)"
+	    echo "Usage: \t gke-proxy <start|stop|status>"
+	    ;;
+	esac
+}

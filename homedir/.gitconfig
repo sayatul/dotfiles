@@ -1,7 +1,7 @@
 [user]
   name = Atul Yadav
-  email = hello@sayatul.com 
-  signingkey = abc 
+  email = hello@sayatul.com
+  signingkey = 0C1091CB7AFF271CF1759EF2A02C7CB4B5FAE43C
 [github]
   # https://github.com/blog/180-local-github-config
   user = sayatul

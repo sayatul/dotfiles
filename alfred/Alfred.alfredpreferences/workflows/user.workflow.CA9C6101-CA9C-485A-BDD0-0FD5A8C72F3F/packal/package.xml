@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<workflow>
+  <name>Home Assistans</name>
+  <version>1.0</version>
+  <bundle>com.browall.home_assistant.automation</bundle>
+  <updated>1522578064</updated>
+  <file>home_assistant.alfredworkflow</file>
+</workflow>

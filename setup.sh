@@ -5,32 +5,11 @@
 # @author Atul Yadav
 ###########################
 
-# install homebrew (CLI Packages)
-brew_bin=$(which brew) 2>&1 > /dev/null
-if [[ $? != 0 ]]; then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    if [[ $? != 0 ]]; then
-      error "unable to install homebrew, script $0 abort!"
-      exit 2
-  fi
-else
-  # Make sure we’re using the latest Homebrew
-  brew update
-  read -r -p "run brew upgrade? [y|N] " response
-  if [[ $response =~ ^(y|yes|Y) ]];then
-      # Upgrade any already-installed formulae
-      brew upgrade
-  fi
-fi
+# install homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-#####
-# install brew cask (UI Packages)
-#####
-output=$(brew tap | grep cask)
-if [[ $? != 0 ]]; then
-  brew install caskroom/cask/brew-cask
-fi
-brew tap caskroom/versions > /dev/null 2>&1
+# install zsh
+/bin/bash -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # install brew packages
 sh brew.sh
